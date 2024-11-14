@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Send notification to external endpoint
         run: |
-          curl --location 'https://cpe-api.b2pc.internal/api/testip'
+          curl --location 'https://google.com'
