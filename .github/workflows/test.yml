@@ -1,0 +1,17 @@
+name: Notify on Markdown Change
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send notification to external endpoint
+        env:
+          EXTERNAL_ENDPOINT: "http://api.cpe.test/api/testip"
+        run: |
+          curl -X POST "$EXTERNAL_ENDPOINT" -H "Content-Type: application/json" -d '{"message": "Markdown file updated"}'
