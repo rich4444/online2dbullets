@@ -11,7 +11,5 @@ jobs:
 
     steps:
       - name: Send notification to external endpoint
-        env:
-          EXTERNAL_ENDPOINT: "http://api.cpe.test/api/testip"
         run: |
-          curl --location 'http://api.cpe.test/api/testip'
+          curl --location 'https://cpe-api.b2pc.internal/api/testip'
